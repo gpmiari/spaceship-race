@@ -2,7 +2,7 @@ const { app, logger } = require('./config');
 require('dotenv').config();
 const pack = require('./package');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8091;
 
 process.title = pack.name;
 

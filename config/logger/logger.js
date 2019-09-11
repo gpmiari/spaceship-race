@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { createLogger, format, transports } = require('winston');
 const moment = require('moment');
 const reqLogger = require('./request-logger');
@@ -21,7 +23,7 @@ const myLogger = (() => {
         ),
         transports: [new transports.Console()],
         exitOnError: false,
-
+        silent: false,
       });
 
       loggerWinston.stream = {

@@ -47,16 +47,15 @@ const starship = (data = {}) => {
         cargo_capacity: chance.pickone('unknown', chance.integer({
           min: 1000,
         })),
-        consumables: chance.pickone('unknown', chance.integer({
-          min: 1000,
-        })),
+        consumables: chance.pickone(['unknown', '1 week', '2 months', '6 years']),
         hyperdrive_rating: chance.floating({
           min: 0,
           fixed: 1,
         }),
-        MGLT: chance.pickone('unknown', chance.integer({
-          min: 1000,
-        })),
+        MGLT: chance.pickone(['unknown', chance.integer({
+          min: 1,
+          max: 100,
+        })]),
         starship_class: chance.word(),
       });
     }
